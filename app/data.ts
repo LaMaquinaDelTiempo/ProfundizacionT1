@@ -95,9 +95,75 @@ export async function deleteContact(id: string) {
   fakeContacts.destroy(id);
 }
 
-[
+const contacts = [
+  {
+    avatar: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Radamel_Falcao_Garc%C3%ADa_%28cropped%29.jpg/375px-Radamel_Falcao_Garc%C3%ADa_%28cropped%29.jpg",
+    first: "Radamel",
+    last: "Falcao",
+    twitter: "@FALCAO"
+  },
+  {
+    avatar: "https://peopleenespanol.com/thmb/LVVrzx3d3KEvwPH7PaoWs_1OA7c=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/JamesRodriguez-f293de3e82464aff91f53fb8b6de4347.jpg",
+    first: "James",
+    last: "Rodríguez",
+    twitter: "@jamesdrodriguez"
+  },
+  {
+    avatar: "https://imageio.forbes.com/specials-images/imageserve/66f3d43c04822a6f78aa158f/Liverpool-FC-v-Nottingham-Forest-FC---Premier-League/960x0.jpg?format=jpg&width=1440",
+    first: "Luis",
+    last: "Díaz",
+    twitter: "@LuisFDiaz19"
+  },
+  {
+    avatar: "https://e0.365dm.com/20/06/2048x1152/skysports-yerry-mina-everton_5004514.jpg?20200602170914",
+    first: "Yerry",
+    last: "Mina",
+    twitter: "@YerryMina"
+  },
+  {
+    avatar: "https://b.fssta.com/uploads/application/soccer/headshots/8368.vresize.350.350.medium.16.png",
+    first: "David",
+    last: "Ospina",
+    twitter: "@D_Ospina1"
+  },
+  {
+    avatar: "https://s.hs-data.com/bilder/spieler/gross/116360.jpg?fallback=png",
+    first: "Duván",
+    last: "Zapata",
+    twitter: "@duvanzapata91"
+  },
+  {
+    avatar: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/W%C3%ADlmar_Barrios_in_Zenit%2C_2019.jpg/338px-W%C3%ADlmar_Barrios_in_Zenit%2C_2019.jpg",
+    first: "Wilmar",
+    last: "Barrios",
+    twitter: "@wilmarBarrios8"
+  },
+  {
+    avatar: "https://estaticos.elcolombiano.com/binrepository/848x565/63c0/780d565/none/11101/DVLH/foto-cuenta-de-x-11johanmojica_45654206_20240723153636.jpg",
+    first: "Johan",
+    last: "Mojica",
+    twitter: "@mojicajohan"
+  },
+  {
+    avatar: "https://b.fssta.com/uploads/application/soccer/headshots/37370.vresize.350.350.medium.60.png",
+    first: "Mateus",
+    last: "Uribe",
+    twitter: "@mateus_uribe8"
+  },
+  {
+    avatar: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Jeison_Murillo_USA_vs_COL_%2845272402752%29_%28cropped%29.jpg/300px-Jeison_Murillo_USA_vs_COL_%2845272402752%29_%28cropped%29.jpg",
+    first: "Jeison",
+    last: "Murillo",
+    twitter: "@JeisonMurillo19"
+  },
   {
     avatar:
+      "https://s.hs-data.com/bilder/spieler/gross/140589.jpg?fallback=png",
+    first: "Juan",
+    last: "Cuadrado",
+    twitter: "@cuadrado"
+  },
+   /* { avatar:
       "https://sessionize.com/image/124e-400o400o2-wHVdAuNaxi8KJrgtN3ZKci.jpg",
     first: "Shruti",
     last: "Kapoor",
@@ -307,10 +373,11 @@ export async function deleteContact(id: string) {
     first: "Jon",
     last: "Jensen",
     twitter: "@jenseng",
-  },
+  }, */
+  
 ].forEach((contact) => {
   fakeContacts.create({
     ...contact,
-    id: `${contact.first.toLowerCase()}-${contact.last.toLocaleLowerCase()}`,
+    id: `${contact.first.toLowerCase()}-${contact.last.toLowerCase()}`,
   });
 });
