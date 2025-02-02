@@ -1,38 +1,33 @@
-# Welcome to Remix!
+## Para iniciar el proyecto
+Instalación (npm install)
+Ejecución (npm run dev)
 
-- [Remix Docs](https://remix.run/docs)
+### **`<Link>`**  
+Componente para navegación **sin recargar la página** (client-side). Permite transiciones fluidas entre rutas manteniendo el estado de la aplicación.
 
-## Development
+---
 
-From your terminal:
+### **`loader`**  
+Función **del lado del servidor** que carga datos específicos para una ruta antes de renderizarla. Centraliza la lógica de fetching y asegura que los datos estén disponibles al cargar el componente.
 
-```sh
-npm run dev
-```
+---
 
-This starts your app in development mode, rebuilding assets on file changes.
+### **Rutas Dinámicas**  
+Definidas con parámetros variables (ej: `$id` o `$slug`). Permiten crear URLs adaptables que capturan valores de la ruta para personalizar contenido o consultas.
 
-## Deployment
+---
 
-First, build your app for production:
+### **Rutas Anidadas**  
+Estructura jerárquica donde rutas hijas heredan la interfaz de su padre (como layouts compartidos). Organiza rutas relacionadas bajo una misma URL base (`/padre/hija`).
 
-```sh
-npm run build
-```
+---
 
-Then run the app in production mode:
+### **`<Outlet/>`**  
+Componente que **renderiza el contenido de las rutas hijas** en rutas anidadas. Actúa como marcador de posición dentro del componente padre para mostrar la UI específica de cada hijo.
 
-```sh
-npm start
-```
+---
 
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/server`
-- `build/client`
+**Relación Clave:**  
+- Los `loaders` alimentan datos a las rutas.  
+- Las rutas dinámicas y anidadas estructuran URLs complejas.  
+- `<Link>` y `<Outlet/>` gestionan la navegación y composición de UI.  
